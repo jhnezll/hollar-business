@@ -50,7 +50,7 @@ const PageLayout: React.FC<Props> = ({children, privateRoute, title, redirectPat
             <div className="flex justify-between py-2.5 px-4 shadow-md items-center bg-white">
                 <a href="/"
                    className="flex justify-between items-center font-medium text-lg focus:underline truncate">
-                    Hollar
+                    Hollar Business
                 </a>
                 <ThemeProvider theme={Theme}>
                 <div className="items-center">
