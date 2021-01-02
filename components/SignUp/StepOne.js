@@ -11,12 +11,12 @@ export default function StepOne({currentStep, onContinue, formData, setFormData}
 
                 <MuiThemeProvider theme={Theme}>
                     <div className="space-y-2">
-                        <Button variant="outlined" color="primary" onClick={onContinue} className="md:h-24 p-2 border-2 rounded-xl w-full">
+                        <Button variant="outlined" color="primary" className="md:h-24 p-2 border-2 rounded-xl w-full">
                             <h3 className="text-black inline-flex">I am a <h3 className="px-1 font-bold">customer</h3> and I plan to receive benefits.</h3>
                         </Button>
 
 
-                        <Button variant="outlined" color="primary" className="md:h-24 p-2 border-2 rounded-xl w-full">
+                        <Button variant="outlined" color="primary" onClick={onContinue}className="md:h-24 p-2 border-2 rounded-xl w-full">
                             <h3 className="text-black inline-flex">I am a <h3 className="px-1 font-bold">business owner</h3> and I plan to provide benefits.</h3>
                         </Button>
                     </div>

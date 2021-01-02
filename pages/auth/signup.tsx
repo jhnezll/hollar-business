@@ -13,10 +13,7 @@ export default function SignUp() {
         email: '',
         password: '',
         confirmPassword: '',
-        firstName: '',
-        lastName: '',
-        // gender: '',
-        // dateOfBirth: new Date('2020-01-01'),
+        businessName: '',
     })
 
     const onContinue = (event) => {
@@ -54,7 +51,7 @@ export default function SignUp() {
         },
         // Step 3
         {
-            title: "Personal Info",
+            title: "Business Info",
             content: <StepThree
                 currentStep={currentStepIndex}
                 onContinue={onContinue}
