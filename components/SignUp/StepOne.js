@@ -17,7 +17,7 @@ export default function StepOne({currentStep, onContinue, formData, setFormData}
 
 
                         <Button variant="outlined" color="primary" onClick={onContinue}className="md:h-24 p-2 border-2 rounded-xl w-full">
-                            <h3 className="text-black inline-flex">I am a <h3 className="px-1 font-bold">business owner</h3> and I plan to provide benefits.</h3>
+                            <h3 className="text-black inline-flex">I am an <h3 className="px-1 font-bold">admin or owner</h3> and I plan to provide benefits.</h3>
                         </Button>
                     </div>
                 </MuiThemeProvider>

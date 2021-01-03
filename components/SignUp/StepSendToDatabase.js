@@ -12,10 +12,13 @@ const StepSendToDatabase = ({currentStep, onContinue, onBack, formData, setFormD
 
     useEffect(() => {
         if (userProfile.uid) {
-            fb.firestore().collection("users-customers").doc(userProfile.uid).set({
-                firstName: formData.firstName,
-                lastName: formData.lastName,
-                email: formData.email
+            fb.firestore().collection("users-businesses").doc(userProfile.uid).set({
+                name: formData.name,
+                email: formData.email,
+                address: formData.address,
+                city: formData.city,
+                state: formData.state,
+                zip: formData.zip
             })
             console.log(userProfile.uid)
             router.push("/dashboard")
@@ -30,7 +33,7 @@ const StepSendToDatabase = ({currentStep, onContinue, onBack, formData, setFormD
             <div className="flex justify-center items-center -mt-8">
                 <div className="text-center space-y-4">
                     <CircularProgress/>
-                    <h1><span className="capitalize">Syncing account, {formData.firstName}</span></h1>
+                    <h1><span className="capitalize">Syncing account, {formData.name}</span></h1>
                 </div>
             </div>
         </MuiThemeProvider>

@@ -13,7 +13,11 @@ export default function SignUp() {
         email: '',
         password: '',
         confirmPassword: '',
-        businessName: '',
+        name: '',
+        address: '',
+        city: '',
+        state: '',
+        zip: '',
     })
 
     const onContinue = (event) => {

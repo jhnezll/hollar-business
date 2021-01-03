@@ -10,24 +10,57 @@ import DateFnsUtils from "@date-io/date-fns";
 
 const StepThree = ({currentStep, onContinue, onBack, formData, setFormData}) => {
 
-    const handleDateChange = (date) => {
-        setFormData({
-            ...formData,
-            dateOfBirth: date,
-        })
-    };
+    const abrvStates = [
+        'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA',
+        'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA',
+        'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND',
+        'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT',
+        'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'
+    ];
 
     return(
         <MuiThemeProvider theme={Theme}>
             <form onSubmit={onContinue}>
-                <div className="">
+                {/*Form*/}
+                <div className="space-y-2">
 
-                    <div className="flex justify-between space-x-2">
-                        {/*Business Name*/}
+                    {/*Business Name*/}
+                    <div>
                         <TextField className="w-full" variant="outlined" label="Business Name" id="business-name" onChange={event => setFormData({
                             ...formData,
-                            businessName: event.target.value
-                        })} value={formData.businessName} required type="text"/>
+                            name: event.target.value
+                        })} value={formData.name} required type="text"/>
+                    </div>
+                    {/*Address*/}
+                    <div>
+                        <TextField className="w-full" variant="outlined" label="Address" id="address" onChange={event => setFormData({
+                            ...formData,
+                            address: event.target.value
+                        })} value={formData.address} required type="text"/>
+                    </div>
+
+                    <div className="w-full flex space-x-2">
+                        {/*City*/}
+                        <TextField variant="outlined" label="City" id="city" onChange={event => setFormData({
+                            ...formData,
+                            city: event.target.value
+                        })} value={formData.city} required type="text"/>
+
+                        {/*State*/}
+                        <Select variant="outlined" id="state" value={formData.state} onChange={event => setFormData({
+                            ...formData,
+                            state: event.target.value
+                        })} required>
+                            {abrvStates.map(state =>
+                                <MenuItem value={state}>{state}</MenuItem>
+                            )}
+                        </Select>
+
+                        {/*Zip Code*/}
+                        <TextField variant="outlined" label="Zip Code" id="zip" onChange={event => setFormData({
+                            ...formData,
+                            zip: event.target.value
+                        })} value={formData.zip} required type="text"/>
                     </div>
                 </div>
 
