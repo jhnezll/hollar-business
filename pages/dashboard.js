@@ -30,12 +30,7 @@ export default function Dashboard() {
         <PageLayout title="Dashboard">
             <div className="h-screen flex justify-center items-center px-12 bg-gray-50">
                 <div className="text-center flex space-x-10">
-                    {accounts.map(account =>
-                        <BusinessCard
-                            title={account.name}
-                            desc={account.desc}
-                        />
-                    )}
+
                 </div>
             </div>
         </PageLayout>

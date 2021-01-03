@@ -28,8 +28,8 @@ const StepThree = ({currentStep, onContinue, onBack, formData, setFormData}) => 
                     <div>
                         <TextField className="w-full" variant="outlined" label="Business Name" id="business-name" onChange={event => setFormData({
                             ...formData,
-                            name: event.target.value
-                        })} value={formData.name} required type="text"/>
+                            businessName: event.target.value
+                        })} value={formData.businessName} required type="text"/>
                     </div>
                     {/*Address*/}
                     <div>

@@ -13,7 +13,7 @@ export default function SignUp() {
         email: '',
         password: '',
         confirmPassword: '',
-        name: '',
+        businessName: '',
         address: '',
         city: '',
         state: '',

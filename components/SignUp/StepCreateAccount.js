@@ -19,7 +19,7 @@ const StepCreateAccount = ({currentStep, onContinue, onBack, formData, setFormDa
             <div className="flex justify-center items-center -mt-8">
                 <div className="text-center space-y-4">
                     <CircularProgress/>
-                    <h1><span className="capitalize">{formData.name}</span>, we're creating your account!</h1>
+                    <h1><span className="capitalize">{formData.businessName}</span>, we're creating your account!</h1>
                 </div>
             </div>
         </MuiThemeProvider>
