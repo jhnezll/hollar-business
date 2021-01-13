@@ -3,7 +3,8 @@ import SessionContext from "../util/SessionContext";
 import PageLayout from "../components/PageLayout";
 import fb from "../util/firebase-config";
 import BusinessCard from "../components/BusinessCard";
-import {Typography} from "@material-ui/core";
+import {Button, MuiThemeProvider, Typography} from "@material-ui/core";
+import Theme from "../styles/MuiTheme";
 
 function useAccounts() {
     const [accounts, setAccounts] = useState([])
@@ -28,11 +29,13 @@ export default function Dashboard() {
 
     return(
         <PageLayout title="Dashboard">
-            <div className="h-screen flex justify-center items-center px-12 bg-gray-50">
-                <div className="text-center flex space-x-10">
+            <MuiThemeProvider theme={Theme}>
+                <div className="h-screen flex justify-center items-center px-12 bg-gray-50">
+                    <div className="text-center flex space-x-10">
 
+                    </div>
                 </div>
-            </div>
+            </MuiThemeProvider>
         </PageLayout>
 
     )

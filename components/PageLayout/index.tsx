@@ -1,4 +1,4 @@
-import {ReactElement, useContext, useEffect} from "react";
+import React, {ReactElement, useContext, useEffect} from "react";
 import SessionContext from "../../util/SessionContext";
 
 import {useRouter} from "next/router";
@@ -56,7 +56,10 @@ const PageLayout: React.FC<Props> = ({children, privateRoute, title, redirectPat
                 <div className="items-center">
                     {isAuthenticated
                     ?
-                        <Button color="primary" onClick={signOut}>Sign out</Button>
+                        <span className="space-x-2">
+                            <Button onClick={() => router.push('/settings')} color="primary" variant="contained" disableElevation>Business Settings</Button>
+                            <Button color="primary" variant="outlined" disableElevation onClick={signOut}>Sign out</Button>
+                        </span>
                     : <span className="space-x-2">
                         <Button onClick={() => router.push('/auth/signin')} color="primary" variant="outlined" disableElevation>Log in</Button>
                         <Button onClick={() => router.push('/auth/signup')} color="primary" variant="contained" disableElevation>Sign up</Button>
